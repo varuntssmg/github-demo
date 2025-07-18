@@ -1,34 +1,34 @@
 pipeline {
     agent any
 
-    stages{
-        stage('print Hostname'){
-            step{
-                sh 'Hostname'
+    stages {
+        stage('Print Hostname') {
+            steps {
+                sh 'hostname'
             }
         }
-        
-        stage('Ip Address'){
-            step{
+
+        stage('IP Address') {
+            steps {
                 sh 'hostname -I'
             }
         }
-        
-        stage('Cpu Details'){
-            step{
+
+        stage('CPU Details') {
+            steps {
                 sh 'lscpu'
             }
         }
 
-        stage('Disk usage'){
-            step{
-                sh 'df -kh'
+        stage('Disk Usage') {
+            steps {
+                sh 'df -h'
             }
         }
 
-        stage('Memory usage'){
-            step{
-                sh 'free -h'
+        stage('Memory Usage') {
+            steps {
+                sh 'free -m'
             }
         }
     }
